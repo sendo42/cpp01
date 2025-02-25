@@ -1,0 +1,24 @@
+CC = c++
+# CFLAGS = -Wall -Werror -Wextra
+TARGET = a.out
+SRCS = FileStr.cpp \
+	main.cpp 
+OBJ = $(SRCS:.cpp=.o)
+
+$(TARGET): $(OBJ)
+	$(CC) $^ -o $@
+
+$(OBJ): $(SRCS)
+	$(CC) $(CFLAGS) -c $(SRCS)
+
+.PHONY: all re fclean clean
+
+all: $(TARGET)
+
+fclean: clean
+	rm -f $(TARGET)
+
+clean:
+	rm -f $(OBJ)
+
+re: fclean all
