@@ -1,19 +1,25 @@
 #include "Harl.hpp"
 
-void Harl::complain(std::string level)
+
+void Harl::complain(const std::string &level)
 {
-    int flag;
+    if(level != "DEBUG" && level != "INFO" && level != "WARNING" && level != "ERROR")
+        return ;
 
     switch(level[0])
     {
         case 'D':
             this->debug();
+            break ;
         case 'I':
             this->info();
+            break ;
         case 'W':
             this->warning();
+            break ;
         case 'E':
             this->error();
+            break ;
     }
 }
 

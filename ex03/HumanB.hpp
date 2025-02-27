@@ -87,11 +87,20 @@ constは宣言時に初期化しないといけない。
 
 色々考えた結果、mainの関数を見ればわかるけど、おそらくこれはポインタでやらないとだめだ。
 なぜならclubがあくまでコピーでしかないから二回目のsettypeで反映されていない。
+
+
+
 いや、HumanAのWeaponの定義がよくなかった。
 Weapon weaponと宣言していたが、
-ここを
+shucream@0141 ~/42Tokyo/cpp01/ex03 % ./a.out 
+Bob attacks with their crude spiked club
+Bob attacks with their crude spiked club
+endendJim attacks with their crude skiped club
+Jim attacks with their some other type of club
+
+こうなる問題があった。そこを
 Weapon &weaponと宣言することで解決した。
-なぜか？
+なぜなら最初の時点での変数はアドレス先のメモリを変えていないから。
 
 
 

@@ -13,7 +13,7 @@ int main(int ac, char **av)
 {
     Zombie* zombies;
 
-    if(ac <= 1)
+    if(ac <= 1 || ac >= 3)
     {
         std::cout << "need num and name" << std::endl;
         return 1;
@@ -21,7 +21,7 @@ int main(int ac, char **av)
     else
     {
         zombies = zombieHorde(atoi(av[1]),av[2]);
-        test_zombie(atoi(av[1]), zombies);
+        test_zombie(std::atoi(av[1]), zombies);
         delete [] zombies;
         return 0;
     }
