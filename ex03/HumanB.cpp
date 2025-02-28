@@ -16,8 +16,6 @@ void HumanB::setWeapon(Weapon &weapon)
 
 HumanB::HumanB(std::string Name): weapon(nullptr), name(Name)
 {
-    // this->weapon = Weapon;
-    // this->name = Name;
 }
 
 HumanB::~HumanB()

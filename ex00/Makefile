@@ -1,5 +1,5 @@
 CC = c++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 TARGET = zombie
 SRCS = main.cpp \
 	Zombie.cpp \
@@ -12,7 +12,7 @@ $(TARGET): $(OBJS)
 	$(CC) $(OBJS) -o $(TARGET) 
 
 $(OBJS): $(SRCS)
-	$(CC) -c $(SRCS)
+	$(CC) $(CFLAGS) -c $(SRCS)
 
 .PHONY: all re clean fclean
 

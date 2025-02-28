@@ -13,21 +13,19 @@ int main(int ac, char **av)
 {
     Zombie* zombies;
 
-    if(ac <= 1 || ac >= 3)
+    if(ac != 3)
     {
         std::cout << "need num and name" << std::endl;
-        return 1;
     }
     else
     {
-        zombies = zombieHorde(atoi(av[1]),av[2]);
+        zombies = zombieHorde(std::atoi(av[1]),av[2]);
         test_zombie(std::atoi(av[1]), zombies);
         delete [] zombies;
-        return 0;
     }
 }
 
-__attribute__((destructor))
-static void destructor() {
-	system("leaks -q moarbrainz");
-}
+// __attribute__((destructor))
+// static void destructor() {
+// 	system("leaks -q moarbrainz");
+// }

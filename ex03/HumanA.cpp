@@ -7,8 +7,7 @@ void HumanA::attack()
 
 HumanA::HumanA(std::string Name, Weapon &Weapon): weapon(Weapon), name(Name)
 {
-    // this->weapon = Weapon;
-    // this->name = Name;
+
 }
 
 HumanA::~HumanA()

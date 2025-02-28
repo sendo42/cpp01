@@ -17,5 +17,4 @@ Weapon::Weapon(std::string Type)
 
 Weapon::~Weapon()
 {
-    // std::cout << "end";
 }

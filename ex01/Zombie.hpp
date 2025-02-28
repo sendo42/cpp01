@@ -8,6 +8,8 @@ class Zombie
     public:
         void announce();
         void NameSetter(std::string name);
+        Zombie();
+        ~Zombie();
 
     private:
         std::string Name;

@@ -3,23 +3,13 @@
 
 void Harl::complain(const std::string &level)
 {
-    if(level != "DEBUG" && level != "INFO" && level != "WARNING" && level != "ERROR")
-        return ;
+    void (Harl::*funcptr[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    std::string funcstr[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-    switch(level[0])
+    for(int i = 0; i < 4; i++)
     {
-        case 'D':
-            this->debug();
-            break ;
-        case 'I':
-            this->info();
-            break ;
-        case 'W':
-            this->warning();
-            break ;
-        case 'E':
-            this->error();
-            break ;
+        if(level == funcstr[i])
+            (this->*funcptr[i])();
     }
 }
 
